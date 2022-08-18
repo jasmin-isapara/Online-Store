@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,14 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/template',function()
-{
-    return view('layouts.master');
-});
+// Category Create
+Route::resource('categories',CategoriesController::class);
+
+
+
+
+
+// Route::get('/template',function()
+// {
+//     return view('layouts.master');
+// });
