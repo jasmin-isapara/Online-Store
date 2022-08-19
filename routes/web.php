@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\CategoriesController;
+use \App\Http\Controllers\BrandController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::middleware(['auth'])->group(function(){
     // Category Create
     Route::resource('categories',CategoriesController::class);
+    // Brand
+    Route::resource('brands',BrandController::class);
 
 });
 

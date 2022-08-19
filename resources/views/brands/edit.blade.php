@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Categories</h1>
+                    <h1 class="m-0">Brands</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Category Create</li>
+                        <li class="breadcrumb-item active">Brand Edit</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -28,14 +28,15 @@
 
                     <div class="card card-primary card-outline">
                         <div class="card-body">
-                            <h5 class="card-title">Create Category</h5><br>
-                            <form role="form" action="{{ route('categories.store') }}" method="post">
+                            <h5 class="card-title">Edit Brand</h5><br>
+                            <form role="form" action="{{ route('brands.update', $brand->id) }}" method="post">
                                 @csrf
+                                @method('PUT')
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Name</label>
                                         <input name="name" type="text" class="form-control"
-                                            placeholder="Enter Category Name">
+                                            placeholder="Enter Brand Name" value="{{ $brand->name }}">
                                         @if ($errors->has('name'))
                                             <span class="text-danger">{{ $errors->first('name') }}</span>
                                         @endif
