@@ -23,9 +23,15 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Category Create
-Route::resource('categories',CategoriesController::class);
+Route::middleware(['auth'])->group(function(){
+    // Category Create
+    Route::resource('categories',CategoriesController::class);
 
+});
+
+
+// Category Create
+// Route::resource('categories',CategoriesController::class);
 
 
 
