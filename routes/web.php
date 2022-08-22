@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\CategoriesController;
 use \App\Http\Controllers\BrandController;
+use App\Http\Controllers\SizesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,8 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('categories',CategoriesController::class);
     // Brand
     Route::resource('brands',BrandController::class);
+     // Size
+     Route::resource('sizes',SizesController::class);
 
 });
 
