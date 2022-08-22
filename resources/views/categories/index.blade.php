@@ -32,7 +32,7 @@
 
                             <a href="{{ route('categories.create') }}" class="btn btn-sm btn-primary"><i
                                     class="fa fa-plus"></i> Add Category</a><br><br>
-
+                            {{-- <example-component></example-component> --}}
                             <table class="table table-bordered datatable">
                                 <thead>
                                     <tr>
