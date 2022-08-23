@@ -5,8 +5,13 @@
             <form role="form" action="" method="post">
                 <div class="card-body">
                     <div class="form-group">
-                        <label>Name</label>
-                        <input name="name" type="text" class="form-control" placeholder="Enter Product Name"/>
+                        <label>Category</label>
+                        <select class="form-control">
+                            <option v-for="(item, index) in categories" :key="index" :value="item.id">{{ item.name }}</option>
+                        </select> 
+                        
+                        <!-- <input name="name" type="text" class="form-control" placeholder="Enter Product Name"/> -->
+
                     </div>
                 </div>
 
@@ -21,7 +26,30 @@
 </template>
 
 <script>
-export default {};
+import store from '../../store'
+import * as actions from "../../store/action-types"
+import { mapGetters } from 'vuex';
+
+export default {
+    data()
+    {
+        return{
+            form: {
+                category_id : 0
+            }
+        }
+    },
+    computed : {
+        ...mapGetters({
+            'categories' : 'getCategories'
+        })
+    },
+    mounted()
+    {
+        // Get Categories
+        store.dispatch(actions.GET_CATEGORIES)
+    }
+};
 </script>
 
 <style></style>

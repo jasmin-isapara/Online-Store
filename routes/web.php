@@ -27,8 +27,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth'])->group(function(){
-    // Category Create
+    // Category
     Route::resource('categories',CategoriesController::class);
+    Route::get('/api/categories', [CategoriesController::class, 'getCategoriesJson']);
     // Brand
     Route::resource('brands',BrandController::class);
     // Size

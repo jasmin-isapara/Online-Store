@@ -1,6 +1,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue').default;
+// window.__VUE_DEVTOOLS_GLOBAL_HOOK__.Vue = app.constructor;
 
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
