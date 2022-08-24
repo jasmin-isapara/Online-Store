@@ -6,13 +6,12 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label>Category</label>
-                        <!-- <select class="form-control">
-                            <option v-for="(item, index) in categories" :key="index" :value="item.id">{{ item.name }}</option>
-                        </select>  -->
                         <Select2 v-model="form.category_id" :options="categories" :settings="{ placeholder: 'Select Catgeory' }"></Select2>
-                        
-                        <!-- <input name="name" type="text" class="form-control" placeholder="Enter Product Name"/> -->
-
+                    </div>
+                
+                    <div class="form-group">
+                        <label>Brand</label>
+                        <Select2 v-model="form.brand_id" :options="brands" :settings="{ placeholder: 'Select Brand' }"></Select2>
                     </div>
                 </div>
 
@@ -38,19 +37,24 @@ export default {
     {
         return{
             form: {
-                category_id : 0
+                category_id : 0,
+                brand_id : 0,
+
             }
         }
     },
     computed : {
         ...mapGetters({
-            'categories' : 'getCategories'
+            'categories' : 'getCategories',
+            'brands' : 'getBrands',
         })
     },
     mounted()
     {
         // Get Categories
         store.dispatch(actions.GET_CATEGORIES)
+         // Get Brands
+        store.dispatch(actions.GET_BRANDS)
     }
 };
 </script>
