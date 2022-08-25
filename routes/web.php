@@ -35,6 +35,8 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/api/brands', [BrandController::class, 'getBrandsJson']);
     // Size
     Route::resource('sizes',SizesController::class);
+    Route::get('/api/sizes', [SizesController::class, 'getSizesJson']);
+
     // Product
     Route::resource('products',ProductsController::class);
 
