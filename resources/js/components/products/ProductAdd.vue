@@ -28,7 +28,7 @@
 
                     <div class="form-group">
                         <label>Image <span class="text-danger">*</span></label>
-                        <input type="file" class="form-control" placeholder="Product Image">
+                        <input @change="selectImage" type="file" class="form-control" placeholder="Product Image">
                     </div>
 
                     <div class="form-group">
@@ -146,6 +146,9 @@ export default {
         store.dispatch(actions.GET_SIZES)
     },
     methods:{
+        selectImage(e){
+            this.form.image = e.target.files[0]
+        },
         addItem(){
             let item ={
                 size_id : '',
@@ -158,7 +161,22 @@ export default {
             this.form.items.splice(index,1)
         },
         submitForm(){
-            console.log(this.form)
+            let data = new FormData();
+            data.append('category_id', this.form.category_id)
+            data.append('brand_id', this.form.brand_id)
+            data.append('sku', this.form.sku)
+            data.append('name', this.form.name)
+            data.append('image', this.form.image)
+            data.append('cost_price', this.form.cost_price)
+            data.append('retail_price', this.form.retail_price)
+            data.append('year', this.form.year)
+            data.append('description', this.form.description)
+            data.append('status', this.form.status)
+            data.append('items', this.form.items)
+            store.dispatch(actions.ADD_PRODUCT, data)
+            
+
+            // console.log(this.form)
         }
     }
 };

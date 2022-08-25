@@ -39,6 +39,8 @@ Route::middleware(['auth'])->group(function(){
 
     // Product
     Route::resource('products',ProductsController::class);
+    Route::get('/api/products', [ProductsController::class, 'getProductsJson']);
+
 
 });
 
