@@ -1,6 +1,7 @@
 <template>
 <form @submit.prevent="submitForm" role="form" action="" method="post">
-        <div class="row"> 
+        <div class="row">
+        <show-error></show-error>
         <div class="col-sm-6">
         <div class="card card-primary card-outline">
         <div class="card-body">
@@ -104,9 +105,14 @@ import store from '../../store'
 import * as actions from "../../store/action-types"
 import { mapGetters } from 'vuex';
 import Select2 from 'v-select2-component';
+import ShowError from '../utils/ShowError.vue';
 
 export default {
-    components: {Select2},
+    components: {
+        Select2,
+        ShowError
+
+    },
     data()
     {
         return{
