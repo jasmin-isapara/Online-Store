@@ -5356,8 +5356,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   data: function data() {
     return {
       form: {
-        category_id: 0,
-        brand_id: 0,
+        category_id: '',
+        brand_id: '',
         sku: '',
         name: '',
         image: '',

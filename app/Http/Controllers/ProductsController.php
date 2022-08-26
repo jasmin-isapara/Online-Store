@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class ProductsController extends Controller
@@ -59,6 +61,32 @@ class ProductsController extends Controller
                 'errors' => $validate->errors(),
             ], Response::HTTP_UNPROCESSABLE_ENTITY);
         }
+
+        // Store Product
+        $product = new Product();
+        $product->user_id = Auth::id();
+        $product->category_id = $request->category_id;
+        $product->brand_id = $request->brand_id;
+        $product->sku = $request->sku;
+        $product->name = $request->name;
+        $product->cost_price = $request->cost_price;
+        $product->retail_price = $request->retail_price;
+        $product->year = $request->year;
+        $product->description = $request->description;
+        $product->status = $request->status;
+
+        // Upload Image
+        if($request->hasFile('image'))
+        {
+            $image = $request->image;
+            $name = Str::random(60) . '.' . $image->getClientOriginalExtension();
+            $image->storeAs('public/product_images', $name);
+            $product->image = $image;
+        }
+
+        // Save Product
+        $product->save();
+
         return $request->all();
     }
 

@@ -117,8 +117,8 @@ export default {
     {
         return{
             form: {
-                category_id : 0,
-                brand_id : 0,
+                category_id : '',
+                brand_id : '',
                 sku : '',
                 name : '',
                 image : '',
