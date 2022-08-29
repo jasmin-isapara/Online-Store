@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductSizeStock;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -87,7 +88,23 @@ class ProductsController extends Controller
         // Save Product
         $product->save();
 
-        return $request->all();
+        // Store Product size stock
+        if($request->items)
+        {
+            foreach(json_decode($request->items) as $item)
+            {
+                $size_stock = new ProductSizeStock();
+                $size_stock->product_id = $product->id;
+                $size_stock->size_id = $item->size_id;
+                $size_stock->location = $item->location;
+                $size_stock->quantity = $item->quantity;
+                $size_stock->save();
+            }
+        }
+
+        return response()->json([
+            'success' => true,
+        ], Response::HTTP_OK);
     }
 
     /**
@@ -132,6 +149,10 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $product->delete();
+
+        flash('Product Deleted Successfully')->success();
+        return redirect()->route('products.index');
     }
 }

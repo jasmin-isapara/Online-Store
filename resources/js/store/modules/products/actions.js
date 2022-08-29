@@ -7,10 +7,13 @@ export default {
     {
         Axios.post('/products', payload)
             .then(res=>{
-
+                if (res.data.success == true)
+                {
+                   window.location.href = '/products' 
+                }
             })
             .catch(err=>{
-                console.log(err.response.data.errors)
+                // console.log(err.response.data.errors)
                 commit(mutations.SET_ERRORS, err.response.data.errors)
             })
     }
