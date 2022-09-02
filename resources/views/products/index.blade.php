@@ -37,17 +37,33 @@
                                 <thead>
                                     <tr>
                                         <td>#SL</td>
+                                        <td class="text-center">Image</td>
                                         <td>Name</td>
+                                        <td>SKU</td>
+                                        <td>Category</td>
+                                        <td>Brand</td>
                                         <td>Action</td>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @if ($products)
+                                        {{-- @dd($products) --}}
                                         @foreach ($products as $key => $product)
                                             <tr>
-                                                <td>{{ ++$key }}</td>
+                                                <td>{{ $key }}</td>
+                                                <td class="text-center">
+                                                    <img width="64px"
+                                                        src="{{ asset('Product_Image/' . $product->image) }}">
+                                                </td>
                                                 <td>{{ $product->name ?? '' }}</td>
+                                                <td>{{ $product->sku ?? '' }}</td>
+                                                <td>{{ $product->category->name ?? '' }}</td>
+                                                <td>{{ $product->brand->name ?? '' }}</td>
                                                 <td>
+                                                    <a class="btn btn-sm btn-primary "
+                                                        href="{{ route('products.show', $product->id) }}">
+                                                        <i class="fa fa-desktop"> Show</i>
+                                                    </a>
                                                     <a class="btn btn-sm btn-info "
                                                         href="{{ route('products.edit', $product->id) }}">
                                                         <i class="fa fa-edit"> Edit</i>

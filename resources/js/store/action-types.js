@@ -1,14 +1,15 @@
 // ERRORS
-export const GET_ERRORS = 'GET_ERRORS'
+export const GET_ERRORS = "GET_ERRORS";
 
 // Categories
-export const GET_CATEGORIES = 'GET_CATEGORIES'
+export const GET_CATEGORIES = "GET_CATEGORIES";
 
 // Brands
-export const GET_BRANDS = 'GET_BRANDS'
+export const GET_BRANDS = "GET_BRANDS";
 
 // Sizes
-export const GET_SIZES = 'GET_SIZES'
+export const GET_SIZES = "GET_SIZES";
 
 // Sizes
-export const ADD_PRODUCT = 'ADD_PRODUCT'
+export const ADD_PRODUCT = "ADD_PRODUCT";
+export const EDIT_PRODUCT = "EDIT_PRODUCT";
