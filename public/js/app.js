@@ -6673,7 +6673,7 @@ var GET_CATEGORIES = "GET_CATEGORIES"; // Brands
 
 var GET_BRANDS = "GET_BRANDS"; // Sizes
 
-var GET_SIZES = "GET_SIZES"; // Sizes
+var GET_SIZES = "GET_SIZES"; // Product
 
 var ADD_PRODUCT = "ADD_PRODUCT";
 var EDIT_PRODUCT = "EDIT_PRODUCT";
