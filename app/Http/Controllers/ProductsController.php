@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\ProductSizeStock;
+use GuzzleHttp\Handler\Proxy;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -243,5 +244,16 @@ class ProductsController extends Controller
         flash('Product Deleted Successfully')->success();
         return back();
         // return redirect()->route('products.index');
+    }
+
+    // Handle AJAX Request
+    public function getProductsJson()
+    {
+        $products = Product::with(['product_stocks.size'])->get();
+
+        return response()->json([
+            'success' => true,
+            'data' => $products
+        ], Response::HTTP_OK);
     }
 }

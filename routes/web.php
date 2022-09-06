@@ -6,6 +6,7 @@ use \App\Http\Controllers\CategoriesController;
 use \App\Http\Controllers\BrandController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SizesController;
+use App\Http\Controllers\StocksController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,10 @@ Route::middleware(['auth'])->group(function(){
     // Product
     Route::resource('products',ProductsController::class);
     Route::get('/api/products', [ProductsController::class, 'getProductsJson']);
+
+    // Stock
+    Route::get('/stocks',[StocksController::class, 'stock'])->name('stock');
+    Route::post('/stocks',[StocksController::class, 'stockSubmit'])->name('stockSubmit');
 
 
 });
