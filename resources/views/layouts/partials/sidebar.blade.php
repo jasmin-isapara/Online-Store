@@ -78,6 +78,19 @@
                              </a>
                          </li>
 
+                         <li class="nav-item">
+                             <a href="{{ route('returnProduct') }}" class="nav-link">
+                                 <i class="far fa-circle nav-icon"></i>
+                                 <p>Return Product</p>
+                             </a>
+                         </li>
+                         <li class="nav-item">
+                             <a href="{{ route('returnProductHistory') }}" class="nav-link">
+                                 <i class="far fa-circle nav-icon"></i>
+                                 <p>Return Product History</p>
+                             </a>
+                         </li>
+
 
                          <li class="nav-item">
                              <a href="#" class="nav-link">
