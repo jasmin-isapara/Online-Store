@@ -45,6 +45,7 @@ Route::middleware(['auth'])->group(function(){
     // Stock
     Route::get('/stocks',[StocksController::class, 'stock'])->name('stock');
     Route::post('/stocks',[StocksController::class, 'stockSubmit'])->name('stockSubmit');
+    Route::get('/stocks/history',[StocksController::class, 'history'])->name('stockHistory');
 
 
 });

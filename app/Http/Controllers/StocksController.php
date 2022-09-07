@@ -74,4 +74,10 @@ class StocksController extends Controller
         
         // return $request->all();
     }
+
+    public function history()
+    {
+        $stocks = ProductStock::with(['product','size'])->orderBy('created_at', 'DESC')->get();
+        return view('stocks.history', compact('stocks'));
+    }
 }
