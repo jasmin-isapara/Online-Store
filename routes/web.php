@@ -9,6 +9,7 @@ use \App\Http\Controllers\BrandController;
 use App\Http\Controllers\StocksController;
 use App\Http\Controllers\ProductsController;
 use \App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ReturnProductsController;
 
 /*
@@ -27,11 +28,17 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+// Route::middleware(['auth:sanctum', 'verified'])->get('/home', function(){
+//    return view('home') ;
+// });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/logout' , [UsersController::class, 'logout'])->name('users.logout');
 
 Route::middleware(['auth'])->group(function(){
+    // Dashboard
+    Route::get('/home', [DashboardController::class , 'index'])->name('home');
+
     // User
     Route::resource('users', UsersController::class);
 
