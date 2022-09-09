@@ -36,13 +36,13 @@
                             <table class="table table-bordered datatable">
                                 <thead>
                                     <tr>
-                                        <td>#SL</td>
-                                        <td class="text-center">Image</td>
-                                        <td>Name</td>
-                                        <td>SKU</td>
-                                        <td>Category</td>
-                                        <td>Brand</td>
-                                        <td>Action</td>
+                                        <th>#SL</th>
+                                        <th class="text-center">Image</th>
+                                        <th>Name</th>
+                                        <th>SKU</th>
+                                        <th>Category</th>
+                                        <th>Brand</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -53,7 +53,7 @@
                                                 <td>{{ $key }}</td>
                                                 <td class="text-center">
                                                     <img width="64px"
-                                                        src="{{ asset('Product_Image/' . $product->image) }}">
+                                                        src="{{ asset('public/Product_Image/' . $product->image) }}">
                                                 </td>
                                                 <td>{{ $product->name ?? '' }}</td>
                                                 <td>{{ $product->sku ?? '' }}</td>

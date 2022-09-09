@@ -36,9 +36,9 @@
                             <table class="table table-bordered datatable">
                                 <thead>
                                     <tr>
-                                        <td>#SL</td>
-                                        <td>Name</td>
-                                        <td>Action</td>
+                                        <th>#SL</th>
+                                        <th>Name</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>

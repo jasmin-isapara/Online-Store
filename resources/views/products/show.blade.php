@@ -66,7 +66,8 @@
                                 </table>
                             </div>
                             <div class="card-footer">
-                                <a class="btn btn-sm btn-dark" href="{{ route('products.index') }}"><i class="fa fa-arrow-left"></i> Back</a>
+                                <a class="btn btn-sm btn-dark" href="{{ route('products.index') }}"><i
+                                        class="fa fa-arrow-left"></i> Back</a>
                             </div>
                         </div>
                     </div>
@@ -76,7 +77,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Image</h5><br />
                             <div class="card-body text-center">
-                                <img width="200px" src="{{ asset('storage/product_images/' . $product->image) }}"
+                                <img width="200px" src="{{ asset('public/Product_Image/' . $product->image) }}"
                                     alt="">
                             </div>
                         </div>

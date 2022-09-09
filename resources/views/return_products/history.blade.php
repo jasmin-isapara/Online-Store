@@ -32,11 +32,11 @@
                             <table class="table table-bordered datatable">
                                 <thead>
                                     <tr>
-                                        <td>#SL</td>
-                                        <td>Date</td>
-                                        <td>Product</td>
-                                        <td>Size</td>
-                                        <td>Quantity</td>
+                                        <th>#SL</th>
+                                        <th>Date</th>
+                                        <th>Product</th>
+                                        <th>Size</th>
+                                        <th>Quantity</th>
                                     </tr>
                                 </thead>
                                 <tbody>

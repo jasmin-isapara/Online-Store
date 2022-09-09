@@ -30,15 +30,15 @@
                         <div class="card-body">
                             <h5 class="card-title">Size List</h5><br>
 
-                            <a href="{{ route('sizes.create') }}" class="btn btn-sm btn-primary"><i
-                                    class="fa fa-plus"></i> Add Size</a><br><br>
+                            <a href="{{ route('sizes.create') }}" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i>
+                                Add Size</a><br><br>
 
                             <table class="table table-bordered datatable">
                                 <thead>
                                     <tr>
-                                        <td>#SL</td>
-                                        <td>Size</td>
-                                        <td>Action</td>
+                                        <th>#SL</th>
+                                        <th>Size</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>

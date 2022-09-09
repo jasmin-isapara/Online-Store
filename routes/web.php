@@ -1,14 +1,15 @@
 <?php
 
+use App\Models\ReturnProduct;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\CategoriesController;
-use \App\Http\Controllers\BrandController;
-use App\Http\Controllers\ProductsController;
-use App\Http\Controllers\ReturnProductsController;
 use App\Http\Controllers\SizesController;
+use App\Http\Controllers\UsersController;
+use \App\Http\Controllers\BrandController;
 use App\Http\Controllers\StocksController;
-use App\Models\ReturnProduct;
+use App\Http\Controllers\ProductsController;
+use \App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\ReturnProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +29,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/logout' , [UsersController::class, 'logout'])->name('users.logout');
 
 Route::middleware(['auth'])->group(function(){
+    // User
+    Route::resource('users', UsersController::class);
+
+    
     // Category
     Route::resource('categories',CategoriesController::class);
     Route::get('/api/categories', [CategoriesController::class, 'getCategoriesJson']);
