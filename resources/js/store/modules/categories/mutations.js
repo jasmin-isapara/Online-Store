@@ -8,3 +8,5 @@ export default{
         state.categories = payload
     }
 }
+
+

@@ -30,7 +30,7 @@
                             <p>User</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-bag"></i>
+                            <i class="fa fa-users"></i>
                         </div>
                         <a href="{{ route('users.index') }}" class="small-box-footer">More info <i
                                 class="fas fa-arrow-circle-right"></i></a>
@@ -46,7 +46,7 @@
                             <p>Product</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-stats-bars"></i>
+                            <i class="fa fa-list"></i>
                         </div>
                         <a href="{{ route('products.index') }}" class="small-box-footer">More info <i
                                 class="fas fa-arrow-circle-right"></i></a>
@@ -59,10 +59,10 @@
                         <div class="inner">
                             <h3 class="text-white">{{ $total_stocks_in ?? 0 }}</h3>
 
-                            <p class="text-white">Stocks In</p>
+                            <p class="text-white">Stocks In/Out</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-person-add"></i>
+                            <i class="fa fa-cart-plus"></i>
                         </div>
                         <a href="{{ route('stockHistory') }}" class="text-white small-box-footer">More info <i
                                 class="fas fa-arrow-circle-right"></i></a>
@@ -78,7 +78,7 @@
                             <p>Return Products</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-pie-graph"></i>
+                            <i class="fa fa-list"></i>
                         </div>
                         <a href="{{ route('returnProductHistory') }}" class="small-box-footer">More info <i
                                 class="fas fa-arrow-circle-right"></i></a>
@@ -90,7 +90,7 @@
 
             <div class="card card-primary card-outline">
                 <div class="card-body">
-                    <table class="table table-bordered datatable table-sm">
+                    <table class="table table-bordered datatable">
                         <thead>
                             <tr>
                                 <th>#SL</th>
@@ -99,7 +99,7 @@
                                 <th>SKU</th>
                                 <th>Category</th>
                                 <th>Brand</th>
-                                <th>Action</th>
+                                <th class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -109,14 +109,14 @@
                                     <tr>
                                         <td>{{ $key }}</td>
                                         <td class="text-center">
-                                            <img width="64px"
+                                            <img width="64px" height="64px"
                                                 src="{{ asset('public/Product_Image/' . $product->image) }}">
                                         </td>
                                         <td>{{ $product->name ?? '' }}</td>
                                         <td>{{ $product->sku ?? '' }}</td>
                                         <td>{{ $product->category->name ?? '' }}</td>
                                         <td>{{ $product->brand->name ?? '' }}</td>
-                                        <td>
+                                        <td class="text-center">
                                             <a class="btn btn-sm btn-primary "
                                                 href="{{ route('products.show', $product->id) }}">
                                                 <i class="fa fa-desktop"> Show</i>

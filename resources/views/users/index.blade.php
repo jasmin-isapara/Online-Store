@@ -28,19 +28,20 @@
 
                     <div class="card card-primary card-outline">
                         <div class="card-body">
-                            <h5 class="card-title">User List</h5><br>
+
 
                             <a href="{{ route('users.create') }}" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i>
                                 Add User</a><br><br>
                             {{-- <example-component></example-component> --}}
+                            <h5 class="card-title">User List</h5><br>
                             <table class="table table-bordered datatable">
                                 <thead>
                                     <tr>
-                                        <td>#SL</td>
-                                        <td>Name</td>
-                                        <td>Email</td>
-                                        <td>Created At</td>
-                                        <td>Action</td>
+                                        <th>#SL</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Created At</th>
+                                        <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -54,7 +55,7 @@
                                                     @endif
                                                 </td>
                                                 <td>{{ $user->created_at->format('Y-m-d') ?? '' }}</td>
-                                                <td>
+                                                <td class="text-center">
                                                     <a class="btn btn-sm btn-info "
                                                         href="{{ route('users.edit', $user->id) }}">
                                                         <i class="fa fa-edit"> Edit</i>

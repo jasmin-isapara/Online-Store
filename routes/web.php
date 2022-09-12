@@ -24,7 +24,7 @@ use App\Http\Controllers\ReturnProductsController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
 
 Auth::routes();

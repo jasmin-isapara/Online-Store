@@ -12,3 +12,5 @@ export default {
     getters,
     mutations
 }
+
+

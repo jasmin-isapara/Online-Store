@@ -28,11 +28,11 @@
 
                     <div class="card card-primary card-outline">
                         <div class="card-body">
-                            <h5 class="card-title">Product List</h5><br>
 
                             <a href="{{ route('products.create') }}" class="btn btn-sm btn-primary"><i
                                     class="fa fa-plus"></i> Add Product</a><br><br>
                             {{-- <example-component></example-component> --}}
+                            <h5 class="card-title">Product List</h5><br>
                             <table class="table table-bordered datatable">
                                 <thead>
                                     <tr>
@@ -42,7 +42,7 @@
                                         <th>SKU</th>
                                         <th>Category</th>
                                         <th>Brand</th>
-                                        <th>Action</th>
+                                        <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>

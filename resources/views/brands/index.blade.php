@@ -28,17 +28,17 @@
 
                     <div class="card card-primary card-outline">
                         <div class="card-body">
-                            <h5 class="card-title">Brand List</h5><br>
 
                             <a href="{{ route('brands.create') }}" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i>
                                 Add Brand</a><br><br>
 
+                            <h5 class="card-title">Brand List</h5><br>
                             <table class="table table-bordered datatable">
                                 <thead>
                                     <tr>
                                         <th>#SL</th>
                                         <th>Name</th>
-                                        <th>Action</th>
+                                        <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
